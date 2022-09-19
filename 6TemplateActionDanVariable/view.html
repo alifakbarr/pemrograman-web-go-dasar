@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnng html/template Actions</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>{{"Name"}}</td>
+            <td>:{{.Name}}</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            {{$gender := .Gender}}
+            <td style="text-transform: capitalize">
+                :{{$gender}}
+            </td>
+        </tr>
+        <tr>
+            <td>Hobbies</td>
+            <td>:
+                {{range $index, $elem := .Hobbies}}
+                    {{$index}}
+                    {{$elem}},
+                {{end}}
+            </td>
+        </tr>
+        <tr>
+            <td>Affiliation</td>
+            <td>
+                : {{.Info.Affiliation}}
+            </td>
+        </tr>
+        {{if eq .Name "Bruce Wayne"}}
+        <tr>
+            <td colspan="2" style="font-weight: bold;">
+                im batman
+            </td>
+        </tr>
+        {{end}}
+    </table>
+</body>
+</html>
