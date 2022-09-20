@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning html/template function</title>
+</head>
+<body>
+    <p>
+        {{html "<h2>Hello</h2>"}}
+    </p>
+    <p>
+        {{.SayHello "Gotham citizen" "You Are our hero"}}
+    </p>
+    <p>
+        Batman have many friends, {{len .Friends}} of them are:
+        {{range $index, $elem := .Friends}}
+        {{$elem}},
+        {{end}}
+
+    </p>
+</body>
+</html>
